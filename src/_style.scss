@@ -1,0 +1,557 @@
+.background {
+  height: 100vh;
+  background-image: url(../img/bg/diagonal-gradient.png), url(../img/bg/29-a.png),url(../img/bg/37-a.png), url(../img/bg/53-a.png);
+  background-size: 100% 100%, auto, auto, auto;
+
+  background-image: url(../img/bg/29-a.png),url(../img/bg/37-a.png), url(../img/bg/53-a.png);
+  background-size: auto, auto, auto;
+
+  background-image: url(../img/bg/29-a.png),url(../img/bg/37-a.png);
+  background-size: auto, auto;
+
+  //background-image: url(../img/bg/53-a.png);
+  //background-size: auto;
+}
+
+//======================================================
+
+.wr {
+  min-height: 100vh;
+  background: yellow;
+  display: flex;
+
+  &-1 {
+    background: lime;
+  }
+
+  &-2 {
+    background: #2cbbff;
+  }
+
+  &-3 {
+    background: #fc69ff;
+  }
+
+  &-4 {
+    background: #ff8a35;
+  }
+}
+
+.part {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: bold;
+  text-align: justify;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: center;
+
+  &__img {
+    width: 80%;
+    height: auto;
+  }
+
+  &-1 {
+    width: 60%;
+    shape-inside: polygon(10% 10%, 45% 4%, 0% 0%);
+  }
+
+  &-2 {
+    width: 40%;
+  }
+
+}
+
+.shape {
+  background: url(../img/1.jpg);
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 220px 290px, 0 320px);
+  background-size: cover;
+  transition: all 2s;
+  width: 230px;
+  height: 400px;
+  float: left;
+  shape-outside: polygon(0 0px, 50% 10%, 180px 150px, 220px 290px, 0 320px);
+  shape-margin: 10px;
+}
+
+.shape.act {
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+  shape-outside: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+}
+
+//===============
+
+.shape2 {
+  //background: url(../img/1.jpg);
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 220px 290px, 0 320px);
+  background-size: cover;
+  transition: all 2s;
+  width: 30%;
+  height: 100%;
+  float: left;
+  shape-outside: polygon(0 0, 100% 100%, 0 100%);
+  shape-margin: 10px;
+}
+
+.shape2.act {
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+  shape-outside: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+}
+
+.shape3 {
+  //background: url(../img/1.jpg);
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 220px 290px, 0 320px);
+  background-size: cover;
+  transition: all 2s;
+  width: 30%;
+  height: 100%;
+  float: right;
+  shape-outside: polygon(100% 0, 100% 100%, 40% 100%);
+  shape-margin: 10px;
+}
+
+.shape3.act {
+  clip-path: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+  shape-outside: polygon(0 0px, 50% 10%, 180px 150px, 20px 290px, 0 320px);
+}
+
+.shap-cl {
+  height: 800px;
+  overflow: hidden;
+}
+
+.shp {
+  width: 180px;
+  height: 355px;
+  float: right;
+  margin-top: 80px;
+  background: url(../img/m.png) no-repeat;
+  shape-outside: url(../img/z.png);
+  shape-image-threshold: 0.5;
+  shape-margin: 10px;
+}
+
+//=============================
+$clip: 120px;
+$clipPad: 15px;
+//$clip: 5.7vw;
+
+$hor3: 75%;
+$vert3: 30%;
+
+
+  $hor3: 80%;
+  $vert3: 50%;
+
+//$hor3: 20%;
+//$vert3: 70%;
+
+
+//$hor3: 81%;
+//$vert3: 42%;
+//
+//$hor4: 75%;
+//$vert4: 54%;
+//
+//$hor5: 69%;
+//$vert5: 42%;
+
+
+$time-tr: 2s;
+
+//$hor1: 30%;
+//$vert1: 50%;
+
+.clip_2 {
+  display: block;
+  transition: all $time-tr;
+  cursor: pointer;
+  //clip-path: polygon(calc(#{$hor3} - #{$clip}) #{$vert3}, //left
+  //        calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clip} / 2),
+  //        #{$hor3} calc(#{$vert3} - #{$clip}), //top
+  //        calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} - #{$clip} / 2),
+  //        calc(#{$hor3} + #{$clip}) #{$vert3}, //right
+  //        calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2),
+  //        #{$hor3} calc(#{$vert3} + #{$clip}), //bottom
+  //        calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2));
+
+  clip-path: polygon(
+                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} - #{$clipPad} - #{$clip} ), //left
+                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} - #{$clipPad} - 1.5*#{$clip} ),
+                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 2*#{$clip}), //top
+                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} - #{$clipPad} - 1.5*#{$clip}),
+                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} - #{$clipPad} - 1*#{$clip}), //right
+                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} - #{$clipPad} - #{$clip}/2),
+                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 0*#{$clip}), //bottom
+                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} - #{$clipPad} - #{$clip}/2)
+  );
+}
+
+.clip_3 {
+  display: block;
+  transition: all $time-tr;
+  cursor: pointer;
+  //clip-path: polygon(calc(#{$hor3} - #{$clip}) #{$vert3}, //left
+  //        calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clip} / 2),
+  //        #{$hor3} calc(#{$vert3} - #{$clip}), //top
+  //        calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} - #{$clip} / 2),
+  //        calc(#{$hor3} + #{$clip}) #{$vert3}, //right
+  //        calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2),
+  //        #{$hor3} calc(#{$vert3} + #{$clip}), //bottom
+  //        calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2));
+
+  clip-path: polygon(
+                  calc(#{$hor3} + #{$clipPad}) calc(#{$vert3}), //left
+                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} + #{$clipPad} - #{$clip}/2 ),
+                  calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} - #{$clip}), //top
+                  calc(#{$hor3 + #{$clipPad} + 1.5*#{$clip}}) calc(#{$vert3} - #{$clip}/2),
+                  calc(#{$hor3} + #{$clipPad} + 2*#{$clip}) calc(#{$vert3}), //right
+                  calc(#{$hor3} + #{$clipPad} + #{$clip}*1.5) calc(#{$vert3} + #{$clip}/2),
+                  calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
+                  calc(#{$hor3} + #{$clipPad} + #{$clip}/2) calc(#{$vert3} + #{$clip}/2)
+  );
+}
+
+.clip_4 {
+  display: block;
+  transition: all $time-tr;
+  cursor: pointer;
+  //clip-path: polygon(calc(#{$hor4} - #{$clip}) #{$vert4}, //left
+  //        calc(#{$hor4} - #{$clip} / 2) calc(#{$vert4} - #{$clip} / 2),
+  //        #{$hor4} calc(#{$vert4} - #{$clip}), //top
+  //        calc(#{$hor4} + #{$clip} / 2) calc(#{$vert4} - #{$clip} / 2),
+  //        calc(#{$hor4} + #{$clip}) #{$vert4}, //right
+  //        calc(#{$hor4} + #{$clip} / 2) calc(#{$vert4} + #{$clip} / 2),
+  //        #{$hor4} calc(#{$vert4} + #{$clip}), //bottom
+  //        calc(#{$hor4} - #{$clip} / 2) calc(#{$vert4} + #{$clip} / 2));
+
+  clip-path: polygon(
+                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} + #{$clipPad} + #{$clip} ), //left
+                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} + #{$clipPad} + #{$clip}/2 ),
+                  #{$hor3} calc(#{$vert3} + #{$clipPad}), //top
+                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} + #{$clipPad} + #{$clip}/2 ),
+                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} + #{$clipPad} + 1*#{$clip}), //right
+                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} + #{$clipPad} + 1.5*#{$clip}),
+                  #{$hor3} calc(#{$vert3} + #{$clipPad} + 2*#{$clip}), //bottom
+                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} + #{$clipPad} + 1.5*#{$clip})
+  );
+
+}
+
+.clip_5 {
+  display: block;
+  //display: none;
+  transition: all $time-tr;
+  cursor: pointer;
+  //clip-path: polygon(calc(#{$hor5} - #{$clip}) #{$vert5}, //left
+  //        calc(#{$hor5} - #{$clip} / 2) calc(#{$vert5} - #{$clip} / 2),
+  //        #{$hor5} calc(#{$vert5} - #{$clip}), //top
+  //        calc(#{$hor5} + #{$clip} / 2) calc(#{$vert5} - #{$clip} / 2),
+  //        calc(#{$hor5} + #{$clip}) #{$vert5}, //right
+  //        calc(#{$hor5} + #{$clip} / 2) calc(#{$vert5} + #{$clip} / 2),
+  //        #{$hor5} calc(#{$vert5} + #{$clip}), //bottom
+  //        calc(#{$hor5} - #{$clip} / 2) calc(#{$vert5} + #{$clip} / 2));
+
+  clip-path: polygon(
+                  calc(#{$hor3} - #{$clipPad} - 2*#{$clip}) calc(#{$vert3}), //left
+                  calc(#{$hor3} - #{$clipPad} - 1.5*#{$clip}) calc(#{$vert3} - #{$clip}/2 ),
+                  calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} - #{$clip}), //top
+                  calc(#{$hor3 - #{$clipPad} - #{$clip}/2}) calc(#{$vert3} - #{$clip}/2),
+                  calc(#{$hor3} - #{$clipPad}) calc(#{$vert3}), //right
+                  calc(#{$hor3} - #{$clipPad} - #{$clip}/2) calc(#{$vert3} + #{$clip}/2),
+                  calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
+                  calc(#{$hor3} - #{$clipPad} - 1.5*#{$clip}) calc(#{$vert3} + #{$clip}/2)
+  );
+}
+
+//.clip {
+//  display: block;
+//  transition: all 2s;
+//  cursor: pointer;
+//  clip-path: polygon(calc(#{$hor} - #{$clip}) #{$vert}, //left
+//          calc(#{$hor} - #{$clip}/2) calc(#{$vert} - #{$clip}/2),
+//          #{$hor} calc(#{$vert} - #{$clip}), //top
+//          calc(#{$hor} + #{$clip}/2) calc(#{$vert} - #{$clip}/2),
+//          calc(#{$hor} + #{$clip}) #{$vert}, //right
+//          calc(#{$hor} + #{$clip}/2) calc(#{$vert} + #{$clip}/2),
+//          #{$hor} calc(#{$vert} + #{$clip}), //bottom
+//          calc(#{$hor} - #{$clip}/2) calc(#{$vert} + #{$clip}/2));
+//
+//
+//
+//
+//
+//  &-1 {
+//    background: url('../img/5.jpg') no-repeat;
+//    background-size: cover;
+//    max-width: 900px;
+//    margin: auto;
+//    margin-top: 100px;
+//    margin-bottom: 100px;
+//    position: relative;
+//  }
+//
+//  &-2 {
+//    display: block;
+//    transition: all 2s;
+//    cursor: pointer;
+//    clip-path: polygon(calc(#{$hor1} - #{$clip}) #{$vert1}, //left
+//            calc(#{$hor1} - #{$clip}/1.5) calc(#{$vert1} - #{$clip}/1.5),
+//            #{$hor1} calc(#{$vert1} - #{$clip}), //top
+//            calc(#{$hor1} + #{$clip}/1.5) calc(#{$vert1} - #{$clip}/1.5),
+//            calc(#{$hor1} + #{$clip}) #{$vert1}, //right
+//            calc(#{$hor1} + #{$clip}/1.5) calc(#{$vert1} + #{$clip}/1.5),
+//            #{$hor1} calc(#{$vert1} + #{$clip}), //bottom
+//            calc(#{$hor1} - #{$clip}/1.5) calc(#{$vert1} + #{$clip}/1.5));
+//
+//    background: url('../img/12.jpeg') no-repeat;
+//    background-position: -70% -90%;
+//    position: absolute;
+//    left: 0;
+//    right: 0;
+//    top: 0;
+//    bottom: 0;
+//    z-index: 2;
+//  }
+//}
+
+
+//======================================
+
+$hor3: 50%;
+$vert3: 50%;
+$time-tr-st: 1s;
+
+.start {
+
+  .bl-city__item {
+    transition: all $time-tr-st;
+  }
+
+  .clip_2 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clip}) calc(#{$vert3} - #{$clipPad} - #{$clip}), //left
+                    calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clip}),
+                    #{$hor3} calc(#{$vert3} - #{$clipPad} - 2 * #{$clip}), //top
+                    calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clip}),
+                    calc(#{$hor3} + #{$clip}) calc(#{$vert3} - #{$clipPad} - 1 * #{$clip}), //right
+                    calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - #{$clip} / 2),
+                    #{$hor3} calc(#{$vert3} - #{$clipPad} - 0 * #{$clip}), //bottom
+                    calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - #{$clip} / 2)
+    );
+  }
+
+  .clip_3 {
+    clip-path: polygon(
+                    calc(#{$hor3} + #{$clipPad}) calc(#{$vert3}), //left
+                    calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clipPad} - #{$clip} / 2),
+                    calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} - #{$clip}), //top
+                    calc(#{$hor3 + #{$clipPad} + 1.5*#{$clip}}) calc(#{$vert3} - #{$clip} / 2),
+                    calc(#{$hor3} + #{$clipPad} + 2 * #{$clip}) calc(#{$vert3}), //right
+                    calc(#{$hor3} + #{$clipPad} + #{$clip} * 1.5) calc(#{$vert3} + #{$clip} / 2),
+                    calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
+                    calc(#{$hor3} + #{$clipPad} + #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2)
+    );
+  }
+
+  .clip_4 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clip}) calc(#{$vert3} + #{$clipPad} + #{$clip}), //left
+                    calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + #{$clip} / 2),
+                    #{$hor3} calc(#{$vert3} + #{$clipPad}), //top
+                    calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} + #{$clipPad} + #{$clip} / 2),
+                    calc(#{$hor3} + #{$clip}) calc(#{$vert3} + #{$clipPad} + 1 * #{$clip}), //right
+                    calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clip}),
+                    #{$hor3} calc(#{$vert3} + #{$clipPad} + 2 * #{$clip}), //bottom
+                    calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clip})
+    );
+
+  }
+
+  .clip_5 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clipPad} - 2 * #{$clip}) calc(#{$vert3}), //left
+                    calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clip}) calc(#{$vert3} - #{$clip} / 2),
+                    calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} - #{$clip}), //top
+                    calc(#{$hor3 - #{$clipPad} - #{$clip}/2}) calc(#{$vert3} - #{$clip} / 2),
+                    calc(#{$hor3} - #{$clipPad}) calc(#{$vert3}), //right
+                    calc(#{$hor3} - #{$clipPad} - #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2),
+                    calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
+                    calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clip}) calc(#{$vert3} + #{$clip} / 2)
+    );
+  }
+}
+
+
+//======================================
+$clipBegin: 0px;
+$time-tr-beg: 0.5s;
+
+.begSize {
+
+  .bl-city__item {
+    transition: all $time-tr-beg;
+  }
+
+  .clip_2 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clipBegin}) calc(#{$vert3} - #{$clipPad} - #{$clipBegin}), //left
+                    calc(#{$hor3} - #{$clipBegin} / 2) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clipBegin}),
+                    #{$hor3} calc(#{$vert3} - #{$clipPad} - 2 * #{$clipBegin}), //top
+                    calc(#{$hor3 + #{$clipBegin}/2}) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clipBegin}),
+                    calc(#{$hor3} + #{$clipBegin}) calc(#{$vert3} - #{$clipPad} - 1 * #{$clipBegin}), //right
+                    calc(#{$hor3} + #{$clipBegin} / 2) calc(#{$vert3} - #{$clipPad} - #{$clipBegin} / 2),
+                    #{$hor3} calc(#{$vert3} - #{$clipPad} - 0 * #{$clipBegin}), //bottom
+                    calc(#{$hor3} - #{$clipBegin} / 2) calc(#{$vert3} - #{$clipPad} - #{$clipBegin} / 2)
+    );
+  }
+
+  .clip_3 {
+    clip-path: polygon(
+                    calc(#{$hor3} + #{$clipPad}) calc(#{$vert3}), //left
+                    calc(#{$hor3} + #{$clipBegin} / 2) calc(#{$vert3} + #{$clipPad} - #{$clipBegin} / 2),
+                    calc(#{$hor3} + #{$clipPad} + #{$clipBegin}) calc(#{$vert3} - #{$clipBegin}), //top
+                    calc(#{$hor3 + #{$clipPad} + 1.5*#{$clipBegin}}) calc(#{$vert3} - #{$clipBegin} / 2),
+                    calc(#{$hor3} + #{$clipPad} + 2 * #{$clipBegin}) calc(#{$vert3}), //right
+                    calc(#{$hor3} + #{$clipPad} + #{$clipBegin} * 1.5) calc(#{$vert3} + #{$clipBegin} / 2),
+                    calc(#{$hor3} + #{$clipPad} + #{$clipBegin}) calc(#{$vert3} + #{$clipBegin}), //bottom
+                    calc(#{$hor3} + #{$clipPad} + #{$clipBegin} / 2) calc(#{$vert3} + #{$clipBegin} / 2)
+    );
+  }
+
+  .clip_4 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clipBegin}) calc(#{$vert3} + #{$clipPad} + #{$clipBegin}), //left
+                    calc(#{$hor3} - #{$clipBegin} / 2) calc(#{$vert3} + #{$clipPad} + #{$clipBegin} / 2),
+                    #{$hor3} calc(#{$vert3} + #{$clipPad}), //top
+                    calc(#{$hor3 + #{$clipBegin}/2}) calc(#{$vert3} + #{$clipPad} + #{$clipBegin} / 2),
+                    calc(#{$hor3} + #{$clipBegin}) calc(#{$vert3} + #{$clipPad} + 1 * #{$clipBegin}), //right
+                    calc(#{$hor3} + #{$clipBegin} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clipBegin}),
+                    #{$hor3} calc(#{$vert3} + #{$clipPad} + 2 * #{$clipBegin}), //bottom
+                    calc(#{$hor3} - #{$clipBegin} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clipBegin})
+    );
+
+  }
+
+  .clip_5 {
+    clip-path: polygon(
+                    calc(#{$hor3} - #{$clipPad} - 2 * #{$clipBegin}) calc(#{$vert3}), //left
+                    calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clipBegin}) calc(#{$vert3} - #{$clipBegin} / 2),
+                    calc(#{$hor3} - #{$clipPad} - #{$clipBegin}) calc(#{$vert3} - #{$clipBegin}), //top
+                    calc(#{$hor3 - #{$clipPad} - #{$clipBegin}/2}) calc(#{$vert3} - #{$clipBegin} / 2),
+                    calc(#{$hor3} - #{$clipPad}) calc(#{$vert3}), //right
+                    calc(#{$hor3} - #{$clipPad} - #{$clipBegin} / 2) calc(#{$vert3} + #{$clipBegin} / 2),
+                    calc(#{$hor3} - #{$clipPad} - #{$clipBegin}) calc(#{$vert3} + #{$clipBegin}), //bottom
+                    calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clipBegin}) calc(#{$vert3} + #{$clipBegin} / 2)
+    );
+  }
+}
+
+.begTrans {
+
+  .bl-city__item {
+    transition: all 2s;
+  }
+}
+//======================================
+
+.clip_2-cn {
+  //height: 290px !important;
+  //width: 410px !important;
+  //left: initial !important;
+  //bottom: initial !important;
+  //right: 9.4% !important;
+  //top: 23% !important;
+  transform: translate(11%, -14%);
+}
+
+.act {
+  .clip_2-cn {
+    transform: translate(0%, 0%);
+  }
+}
+
+
+
+.act {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0 100%) !important;
+  //clip-path: polygon(10% 20%, 20% 30%, 50% 80%) margin-box;
+  background-position: 0% 0%;
+}
+.header {
+  display: block;
+  height: 30px;
+  background: #50504f;
+}
+
+.wrapper {
+  position: relative;
+  min-height: calc(100vh - 30px);
+  background: lightblue;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background: rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.85);
+    pointer-events: none;
+  }
+}
+
+.bl-city {
+
+  &__item {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    &-cn {
+      overflow: hidden;
+      background: transparent;
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      transition: all $time-tr;
+    }
+  }
+
+}
+
+.zm {
+  z-index: 100;
+}
+
+.pen {
+  pointer-events: none;
+}
+
+img {
+  display: block;
+  width: 100% !important;
+}
