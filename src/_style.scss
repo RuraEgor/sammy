@@ -482,15 +482,17 @@ $time-tr-beg: 0.5s;
   //clip-path: polygon(10% 20%, 20% 30%, 50% 80%) margin-box;
   background-position: 0% 0%;
 }
+
 .header {
-  display: block;
-  height: 30px;
-  background: #50504f;
+  //display: block;
+  //height: 30px;
+  //background: #50504f;
 }
 
 .wrapper {
   position: relative;
-  min-height: calc(100vh - 30px);
+  //min-height: calc(100vh - 30px);
+  min-height: 100vh;
   background: lightblue;
   background-size: cover;
   background-position: center center;
