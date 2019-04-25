@@ -1,12 +1,12 @@
 .background {
   height: 100vh;
-  background-image: url(../img/bg/diagonal-gradient.png), url(../img/bg/29-a.png),url(../img/bg/37-a.png), url(../img/bg/53-a.png);
+  background-image: url(../img/bg/diagonal-gradient.png), url(../img/bg/29-a.png), url(../img/bg/37-a.png), url(../img/bg/53-a.png);
   background-size: 100% 100%, auto, auto, auto;
 
-  background-image: url(../img/bg/29-a.png),url(../img/bg/37-a.png), url(../img/bg/53-a.png);
+  background-image: url(../img/bg/29-a.png), url(../img/bg/37-a.png), url(../img/bg/53-a.png);
   background-size: auto, auto, auto;
 
-  background-image: url(../img/bg/29-a.png),url(../img/bg/37-a.png);
+  background-image: url(../img/bg/29-a.png), url(../img/bg/37-a.png);
   background-size: auto, auto;
 
   //background-image: url(../img/bg/53-a.png);
@@ -142,13 +142,11 @@ $clipPad: 15px;
 $hor3: 75%;
 $vert3: 30%;
 
-
-  $hor3: 80%;
-  $vert3: 50%;
+$hor3: calc(100% - 350px);
+$vert3: 50%;
 
 //$hor3: 20%;
 //$vert3: 70%;
-
 
 //$hor3: 81%;
 //$vert3: 42%;
@@ -158,7 +156,6 @@ $vert3: 30%;
 //
 //$hor5: 69%;
 //$vert5: 42%;
-
 
 $time-tr: 2s;
 
@@ -179,14 +176,14 @@ $time-tr: 2s;
   //        calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2));
 
   clip-path: polygon(
-                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} - #{$clipPad} - #{$clip} ), //left
-                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} - #{$clipPad} - 1.5*#{$clip} ),
-                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 2*#{$clip}), //top
-                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} - #{$clipPad} - 1.5*#{$clip}),
-                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} - #{$clipPad} - 1*#{$clip}), //right
-                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} - #{$clipPad} - #{$clip}/2),
-                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 0*#{$clip}), //bottom
-                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} - #{$clipPad} - #{$clip}/2)
+                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} - #{$clipPad} - #{$clip}), //left
+                  calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clip}),
+                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 2 * #{$clip}), //top
+                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} - #{$clipPad} - 1.5 * #{$clip}),
+                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} - #{$clipPad} - 1 * #{$clip}), //right
+                  calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - #{$clip} / 2),
+                  #{$hor3} calc(#{$vert3} - #{$clipPad} - 0 * #{$clip}), //bottom
+                  calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} - #{$clipPad} - #{$clip} / 2)
   );
 }
 
@@ -205,13 +202,13 @@ $time-tr: 2s;
 
   clip-path: polygon(
                   calc(#{$hor3} + #{$clipPad}) calc(#{$vert3}), //left
-                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} + #{$clipPad} - #{$clip}/2 ),
+                  calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clipPad} - #{$clip} / 2),
                   calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} - #{$clip}), //top
-                  calc(#{$hor3 + #{$clipPad} + 1.5*#{$clip}}) calc(#{$vert3} - #{$clip}/2),
-                  calc(#{$hor3} + #{$clipPad} + 2*#{$clip}) calc(#{$vert3}), //right
-                  calc(#{$hor3} + #{$clipPad} + #{$clip}*1.5) calc(#{$vert3} + #{$clip}/2),
+                  calc(#{$hor3 + #{$clipPad} + 1.5*#{$clip}}) calc(#{$vert3} - #{$clip} / 2),
+                  calc(#{$hor3} + #{$clipPad} + 2 * #{$clip}) calc(#{$vert3}), //right
+                  calc(#{$hor3} + #{$clipPad} + #{$clip} * 1.5) calc(#{$vert3} + #{$clip} / 2),
                   calc(#{$hor3} + #{$clipPad} + #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
-                  calc(#{$hor3} + #{$clipPad} + #{$clip}/2) calc(#{$vert3} + #{$clip}/2)
+                  calc(#{$hor3} + #{$clipPad} + #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2)
   );
 }
 
@@ -229,14 +226,14 @@ $time-tr: 2s;
   //        calc(#{$hor4} - #{$clip} / 2) calc(#{$vert4} + #{$clip} / 2));
 
   clip-path: polygon(
-                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} + #{$clipPad} + #{$clip} ), //left
-                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} + #{$clipPad} + #{$clip}/2 ),
+                  calc(#{$hor3} - #{$clip}) calc(#{$vert3} + #{$clipPad} + #{$clip}), //left
+                  calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + #{$clip} / 2),
                   #{$hor3} calc(#{$vert3} + #{$clipPad}), //top
-                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} + #{$clipPad} + #{$clip}/2 ),
-                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} + #{$clipPad} + 1*#{$clip}), //right
-                  calc(#{$hor3} + #{$clip}/2) calc(#{$vert3} + #{$clipPad} + 1.5*#{$clip}),
-                  #{$hor3} calc(#{$vert3} + #{$clipPad} + 2*#{$clip}), //bottom
-                  calc(#{$hor3} - #{$clip}/2) calc(#{$vert3} + #{$clipPad} + 1.5*#{$clip})
+                  calc(#{$hor3 + #{$clip}/2}) calc(#{$vert3} + #{$clipPad} + #{$clip} / 2),
+                  calc(#{$hor3} + #{$clip}) calc(#{$vert3} + #{$clipPad} + 1 * #{$clip}), //right
+                  calc(#{$hor3} + #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clip}),
+                  #{$hor3} calc(#{$vert3} + #{$clipPad} + 2 * #{$clip}), //bottom
+                  calc(#{$hor3} - #{$clip} / 2) calc(#{$vert3} + #{$clipPad} + 1.5 * #{$clip})
   );
 
 }
@@ -256,14 +253,14 @@ $time-tr: 2s;
   //        calc(#{$hor5} - #{$clip} / 2) calc(#{$vert5} + #{$clip} / 2));
 
   clip-path: polygon(
-                  calc(#{$hor3} - #{$clipPad} - 2*#{$clip}) calc(#{$vert3}), //left
-                  calc(#{$hor3} - #{$clipPad} - 1.5*#{$clip}) calc(#{$vert3} - #{$clip}/2 ),
+                  calc(#{$hor3} - #{$clipPad} - 2 * #{$clip}) calc(#{$vert3}), //left
+                  calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clip}) calc(#{$vert3} - #{$clip} / 2),
                   calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} - #{$clip}), //top
-                  calc(#{$hor3 - #{$clipPad} - #{$clip}/2}) calc(#{$vert3} - #{$clip}/2),
+                  calc(#{$hor3 - #{$clipPad} - #{$clip}/2}) calc(#{$vert3} - #{$clip} / 2),
                   calc(#{$hor3} - #{$clipPad}) calc(#{$vert3}), //right
-                  calc(#{$hor3} - #{$clipPad} - #{$clip}/2) calc(#{$vert3} + #{$clip}/2),
+                  calc(#{$hor3} - #{$clipPad} - #{$clip} / 2) calc(#{$vert3} + #{$clip} / 2),
                   calc(#{$hor3} - #{$clipPad} - #{$clip}) calc(#{$vert3} + #{$clip}), //bottom
-                  calc(#{$hor3} - #{$clipPad} - 1.5*#{$clip}) calc(#{$vert3} + #{$clip}/2)
+                  calc(#{$hor3} - #{$clipPad} - 1.5 * #{$clip}) calc(#{$vert3} + #{$clip} / 2)
   );
 }
 
@@ -317,7 +314,6 @@ $time-tr: 2s;
 //    z-index: 2;
 //  }
 //}
-
 
 //======================================
 
@@ -384,7 +380,6 @@ $time-tr-st: 1s;
     );
   }
 }
-
 
 //======================================
 $clipBegin: 0px;
@@ -456,15 +451,10 @@ $time-tr-beg: 0.5s;
     transition: all 2s;
   }
 }
+
 //======================================
 
 .clip_2-cn {
-  //height: 290px !important;
-  //width: 410px !important;
-  //left: initial !important;
-  //bottom: initial !important;
-  //right: 9.4% !important;
-  //top: 23% !important;
   transform: translate(11%, -14%);
 }
 
@@ -474,8 +464,6 @@ $time-tr-beg: 0.5s;
   }
 }
 
-
-
 .act {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0 100%) !important;
@@ -483,15 +471,8 @@ $time-tr-beg: 0.5s;
   background-position: 0% 0%;
 }
 
-.header {
-  //display: block;
-  //height: 30px;
-  //background: #50504f;
-}
-
 .wrapper {
   position: relative;
-  //min-height: calc(100vh - 30px);
   min-height: 100vh;
   background: lightblue;
   background-size: cover;
@@ -507,8 +488,9 @@ $time-tr-beg: 0.5s;
     bottom: 0;
     left: 0;
     z-index: 5;
-    background: rgba(0,0,0,0.45);
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.1);
     pointer-events: none;
   }
 }
@@ -553,7 +535,295 @@ $time-tr-beg: 0.5s;
   pointer-events: none;
 }
 
+.cont-main {
+  background: red;
+  max-width: 1100px;
+  height: calc(100vh - 80px);
+  position: absolute;
+  z-index: 10;
+  left: 40px;
+  top: 40px;
+  right: 40px;
+  overflow: hidden;
+}
+//=============================================
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+  margin-bottom: 20px;
+}
+
+.container:before, .container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.container:after {
+  clear: both;
+}
+
+.container-fluid {
+  *zoom: 1;
+}
+
+.container-fluid:before, .container-fluid:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.container-fluid:after {
+  clear: both;
+}
+
+.cont-top {
+  padding-top: 50px;
+}
+
+.span12 {
+  width: 940px;
+  margin: 0 auto;
+}
+
+a span.pull-right {
+  color: #004466;
+}
+
+a span.pull-right:hover, a span.pull-right:active, a span.pull-right:focus {
+  color: #f15217;
+}
+
+a.downloadlink {
+  text-decoration: none;
+  color: #ccc;
+  font-weight: bold;
+}
+
+a.downloadlink:hover, a.downloadlink:focus, a.downloadlink:active {
+  color: #f15217 !important;
+}
+
+a span.pull-left {
+  color: #57839a;
+}
+
+a span.pull-left:hover, a span.pull-left:active, a span.pull-left:focus {
+  color: #f15217;
+}
+
+.opacity {
+  margin-right: 8px;
+}
+
+.opacity {
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.opacity:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+/* итоговая прозрачность 50% (0.5) */
+
+p {
+  margin: 0 0 9px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 9px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 18px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+h1, h2, h3 {
+  line-height: 36px;
+}
+
+h1 {
+  font-size: 35.75px;
+}
+
+h2 {
+  font-size: 35.75px;
+}
+
+h3 {
+  font-size: 22.75px;
+}
+
+h4 {
+  font-size: 16.25px;
+}
+
+h5 {
+  font-size: 13px;
+}
+
+h6 {
+  font-size: 11.05px;
+}
+
 img {
-  display: block;
-  width: 100% !important;
+  max-width: 100%;
+  width: auto \9
+;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+.pull-left {
+  background-image: url(../img/bg_sammy.png);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: top right;
+  background-color: #f5f5f5;
+  float: left;
+  width: 44%;
+  height: 200px;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.pull-right {
+  background-image: url(../img/bg_len.png);
+  background-repeat: no-repeat;
+  background-size: auto auto;
+  background-position: top right;
+  background-color: #f5f5f5;
+  float: right;
+  width: 44%;
+  height: 200px;
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.small {
+  width: 28%;
+  background: #fff;
+  background-image: none !important;
+  height: auto !important;
+}
+
+.download {
+  margin-left: 5.5%;
+}
+
+/* классы для планшетов */
+@media (max-width: 979px) {
+  .cont-top {
+    padding-top: 0px;
+  }
+  .download {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 979px) {
+  .span12 {
+    width: 724px;
+  }
+  .cont-top {
+    padding-top: 0px;
+  }
+  .small {
+    width: 30%;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .download {
+    width: 20% !important;
+    margin-left: 2.3%;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+  .container {
+    width: auto;
+  }
+  .container-fluid {
+    padding: 0;
+  }
+  .cont-top {
+    padding-top: 0px;
+  }
+  .span12 {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .pull-right, .pull-left {
+    float: left;
+    width: 86%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 240px) {
+  .pull-right, .pull-left {
+    width: 82%;
+  }
+  .opacity {
+    margin-right: 4px;
+  }
+  h1 {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+
+
+.bl-city {
+  //display: none !important;
 }

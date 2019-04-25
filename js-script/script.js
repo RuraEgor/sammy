@@ -89,13 +89,13 @@ setInterval(()=>{
 
 
 //===========
-// $('.characters-modal-descr__charact-descr').slimscroll({
-// 	height: '220px',
-// 	alwaysVisible: true,
-// 	color: 'yellow',
-// 	size: '3px',
-// 	opacity: 0.8
-// });
+$('.scroll-main').slimscroll({
+	height: '80vh',
+	// alwaysVisible: true,
+	color: 'yellow',
+	size: '4px',
+	opacity: 0.8
+});
 
 
 $(function(){
