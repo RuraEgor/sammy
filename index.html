@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Sammy</title>
 
     <!-- css-files -->
     <!--<link rel="stylesheet" href="css/libs/normalize.css">-->
@@ -12,6 +12,7 @@
     <!-- js-files -->
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/jquery.slimscroll.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <!--<script src="/node_modules/jquery/dist/jquery.min.js"></script>-->
     <!-- end js-files -->
 </head>
@@ -20,97 +21,87 @@
 <div id="wrap">
     <div class="wrapper" style="background-image: url('img/bg/fons/10?.jpg');">
         <div class="cont-main cont-main_vis">
-            <!--<div class="cont-main__link-comics">-->
-            <!--<a class="link-comics cont-main__link-en"></a>-->
-            <!--<a class="link-comics cont-main__link-rus"></a>-->
-            <!--</div>-->
-            <!--<div class="cont-main__link-dop">-->
-            <!--<div class="link-dop block-social">-->
-            <!--<a href="/" class="block-social__item block-social__item_vk"></a>-->
-            <!--<a href="/" class="block-social__item block-social__item_facebook"></a>-->
-            <!--<a href="/" class="block-social__item block-social__item_twitter"></a>-->
-            <!--<a href="/" class="block-social__item block-social__item_inst"></a>-->
-            <!--<a href="/" class="block-social__item block-social__item_telegram"></a>-->
-            <!--<a href="/" class="block-social__item block-social__item_youtube"></a>-->
-            <!--</div>-->
-            <!--<a href="/" class="link-dop link-dop_down"></a>-->
-            <!--<a href="/" class="link-dop link-dop_patreon"></a>-->
-            <!--</div>-->
-
-            <div class="container-fluid cont-top">
-                <div class="span12">
-                    <div style="text-align: right; color: #ccc; margin-bottom: 10px;"><h1>RTStudio</h1></div>
-                    <div class="container">
-                        <h1>Sammy: a sci-fi story</h1>
-                        Meet Sammy, a free webcomic that tells a story of a cyber girl travelling future world. <br/>
-                        Space, technology, wolf-lizards, guns, APCs running on cold fusion — you name&nbsp;it.
+            <div class="cont-main__text-bl anim_text">
+                <p class="name-st">RTStudio</p>
+                <h1 class="cont-main__title">Sammy: a sci-fi story</h1>
+                <p class="cont-main__desc">
+                    Meet Sammy, a free webcomic that tells a story of
+                    a cyber girl travelling future world. <br/>
+                    Space, technology, wolf-lizards, guns, APCs running
+                    on cold fusion — you name&nbsp;it.
+                </p>
+            </div>
+            <div class="cont-main__wrap">
+                <div class="cont-main__link-comics">
+                    <a href="https://tapastic.com/series/Sammy"
+                       class="link-comics cont-main__link-en anim_main-link">
+                        <h2 class="link-comics__text link-comics__text-en">Read in<br/>English</h2>
+                    </a>
+                    <a href="http://acomics.ru/~sammy"
+                       class="link-comics cont-main__link-rus anim_main-link">
+                        <h2 class="link-comics__text">Читать на<br/>русском</h2>
+                    </a>
+                </div>
+                <!---->
+                <div class="cont-main__link-dop">
+                    <div class="link-dop block-social anim_dop-link">
+                        <a href="https://vk.com/randomtanstudio"
+                           class="block-social__item block-social__item_vk">
+                            <img src="img/soc_vk.svg" width="25" height="25" />
+                        </a>
+                        <a href="https://www.facebook.com/randomtanstudio"
+                           class="block-social__item block-social__item_facebook">
+                            <img src="img/soc_facebook.svg" width="25" height="25" />
+                        </a>
+                        <a href="https://twitter.com/randomtanstudio"
+                           class="block-social__item block-social__item_twitter">
+                            <img src="img/soc_twitter.svg" width="25" height="25" />
+                        </a>
+                        <a href="https://www.instagram.com/randomtanstudio/"
+                           class="block-social__item block-social__item_inst">
+                            <img src="img/soc_instagram.svg" width="25" height="25" />
+                        </a>
+                        <a href="https://telegram.me/randomtanstudio"
+                           class="block-social__item block-social__item_telegram">
+                            <img src="img/soc_telegram.svg" width="25" height="25" />
+                        </a>
+                        <a href="https://www.youtube.com/c/randomtanstudio"
+                           class="block-social__item block-social__item_youtube">
+                            <img src="img/soc_youtube.svg" width="25" height="25" class="opacity" />
+                        </a>
                     </div>
-                    <div class="">
-                        <a href="https://tapastic.com/series/Sammy"><span
-                                class="pull-left"><h2>Read in <br/>English</h2></span></a>
-                    </div>
-                    <div class="">
-                        <a href="http://acomics.ru/~sammy"><span
-                                class="pull-right"><h2>Читать на<br/>русском</h2></span></a>
-                    </div>
+                    <a href="/download.html" class="link-dop link-dop_down anim_dop-link"
+                       title="Download / Скачать">Download / Скачать</a>
+                    <!---->
+                    <a href="https://www.patreon.com/rtstudio" target="_blank"
+                       class="link-dop link-dop_patreon anim_dop-link" title="Patreon">
+                        <img src="img/patreon_logo.svg"
+                             class="opacity"
+                             width="190"/>
+                    </a>
                 </div>
             </div>
-            <div class="container-fluid">
-                <div class="span12">
-                    <div class="pull-left small">
-                        <div style="text-align: center; padding-top: 8px; padding-bottom: 8px;">
-                            <!-- https://www.iconfinder.com/iconsets/social-flat-rounded-rects -->
-                            <a href="https://vk.com/randomtanstudio" target="_blank"><img src="img/soc_vk.svg"
-                                                                                          width="25" height="25"
-                                                                                          class="opacity"/></a>
-                            <a href="https://www.facebook.com/randomtanstudio" target="_blank"><img
-                                    src="img/soc_facebook.svg" width="25" height="25" class="opacity"/></a>
-                            <a href="https://twitter.com/randomtanstudio" target="_blank"><img
-                                    src="img/soc_twitter.svg" width="25" height="25" class="opacity"/></a>
-                            <a href="https://www.instagram.com/randomtanstudio/" target="_blank"><img
-                                    src="img/soc_instagram.svg" width="25" height="25" class="opacity"/></a>
-                            <a href="https://telegram.me/randomtanstudio" target="_blank"><img
-                                    src="img/soc_telegram.svg" width="25" height="25" class="opacity"/></a>
-                            <a href="https://www.youtube.com/c/randomtanstudio" target="_blank"><img
-                                    src="img/soc_youtube.svg" width="25" height="25" class="opacity"
-                                    style="margin-right: 0;"/></a>
-                        </div>
-                    </div>
-                    <div class="pull-left small download" align="center">
-                        <a href="/download.html" class="downloadlink">Download / Скачать</a>
-                    </div>
-                    <div class="pull-right small" align="center">
-                        <a href="https://www.patreon.com/rtstudio" target="_blank"><img src="img/patreon_logo.svg"
-                                                                                        class="opacity"
-                                                                                        width="190"/></a>
-                    </div>
-                </div>
-            </div>
-
-
         </div>
         <!---->
         <div id="main-bl" class="bl-city start begSize">
-
-            <div class="menu menu_start menu_start-tr">
-                <div class="menu__item" onclick="retAllPageElem()">Main</div>
+            <div class="menu menu_start menu_start-tr begSize_menu">
+                <div class="menu__item menu__item_home" onclick="retAllPageElem()">Home</div>
                 <div class="menu__item menu__item_2 js-menu__item" data-sect="2">Main</div>
                 <div class="menu__item menu__item_3 js-menu__item" data-sect="3">Main</div>
                 <div class="menu__item menu__item_4 js-menu__item" data-sect="4">Main</div>
                 <div class="menu__item menu__item_5 js-menu__item" data-sect="5">Main</div>
             </div>
-
             <div data-sect="2" class="bl-city__item js-bl-slide__item-h js-bl-slide__item clip_2">
                 <!--<div class="bl-city__item-cn clip_2-cn" style="background-image: url('img/bg/fons/11.jpg');">-->
                 <div class="bl-city__item-cn clip_2-cn"
                      style="background-image: url('https://lh3.googleusercontent.com/YLO-PDH2HfWAGXObSf-3fAriFakoA55yrtZixleQ2QDd64J_L4Z8Fok8vn_FIKbxJfhyh5_gnlhdrhUgzQEwwz5KAp-gFmBy-y-LEJWng4srgLBaw-ifnMvr-0GLx9WgbRXEk-2Oryd_b830hZ9adAAG-uSk54wZnXMtdJXiwTaTqUVedgXjcZPssV1r0lHt9uYQOxT_o7lWKFkPzonGZUpuVajHRtBjRcJm0eo0UA8iFSzuVgGeyvC2PCq4KedtwugI5umMkx__tJurexszNYbKWVqDkMeNQ3cFLB_H-kqwhQ6Qnan2GaEyoxb72v71ZL2scwY3ORvc_2rNI0fB0H4nIz1_koW9j0gZe_rP7RJQCSQmeoueMYvDfdyGoAAOk6lY9uKyjKjKZQABFHkmxr1cQNokf2Sgr_0kKECjJcCKsQP6heKIsONS51AlHlSC_BD3FJ-G0MpHkLze9xaWKj8Il0xcIdmqXxB3hOLPQqLjliAhDS1M1tTEiidvuUMW4i3Vyn2LwhoDJ9du6rWUYBm3jkH3qzImL0PI1MdlSWqF2zIoKortYq4qUoUw7a7QAdHImMyU-A1TUo7Ki71TtyKkzLORRvLgyzZPEvA=w1920-h969');">
-                    <!-- --------------------- -->
                     <div class="cont-main">
-                        <h2>Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
-                        <div class="cont-main__context" style="font-size: 25px;">
+                        <h2 class="title-page">Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                        <div class="cont-main__context">
                             <div class="scroll-main">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur at
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
                                     consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
                                     exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
                                     praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
@@ -119,7 +110,8 @@
                                     sequi sunt, unde velit voluptatem!
                                 </p>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur at
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
                                     consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
                                     exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
                                     praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
@@ -130,7 +122,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- --------------------- -->
                 </div>
             </div>
             <div class="bl-decor__clip dn bl-decor__clip-2"></div>
@@ -138,19 +129,103 @@
             <!---->
             <div data-sect="3" class="bl-city__item js-bl-slide__item-h js-bl-slide__item clip_3">
                 <div class="bl-city__item-cn clip_3-cn"
-                     style="background-image: url('https://lh3.google.com/u/0/d/0B5DAZ9hJhfgCMWl4cVFHLXU4U2M=w1920-h969-iv4');"></div>
+                     style="background-image: url('https://lh3.google.com/u/0/d/0B5DAZ9hJhfgCMWl4cVFHLXU4U2M=w1920-h969-iv4');">
+                    <div class="cont-main">
+                        <h2 class="title-page">Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                        <div class="cont-main__context">
+                            <div class="scroll-main">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="bl-decor__clip dn bl-decor__clip-3"></div>
             <!---->
             <!---->
             <div data-sect="4" class="bl-city__item js-bl-slide__item-h js-bl-slide__item clip_4">
-                <div class="bl-city__item-cn clip_4-cn" style="background-image: url('img/bg/fons/13.jpg');"></div>
+                <div class="bl-city__item-cn clip_4-cn" style="background-image: url('img/bg/fons/13.jpg');">
+                    <div class="cont-main">
+                        <h2 class="title-page">Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                        <div class="cont-main__context">
+                            <div class="scroll-main">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div data-sectMenu="2" class="bl-decor__clip dn bl-decor__clip-4"></div>
             <!---->
             <!---->
             <div data-sect="5" class="bl-city__item js-bl-slide__item-h js-bl-slide__item clip_5">
-                <div class="bl-city__item-cn clip_5-cn" style="background-image: url('img/bg/fons/14.jpg');"></div>
+                <div class="bl-city__item-cn clip_5-cn" style="background-image: url('img/bg/fons/14.jpg');">
+                    <div class="cont-main">
+                        <h2 class="title-page">Lorem ipsum dolor sit amet, consectetur adipisicing.</h2>
+                        <div class="cont-main__context">
+                            <div class="scroll-main">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam aspernatur
+                                    at
+                                    consectetur consequuntur deleniti dicta eaque eligendi eos error eum, ex,
+                                    exercitationem, expedita id illum inventore minus molestias neque nobis nostrum
+                                    praesentium quae quaerat repudiandae rerum sequi. Adipisci aliquam aliquid commodi
+                                    consectetur consequuntur culpa deserunt dicta dolore dolorem doloribus facilis id
+                                    incidunt iste laborum maxime necessitatibus nisi praesentium quasi qui quis rerum
+                                    sequi sunt, unde velit voluptatem!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="bl-decor__clip dn bl-decor__clip-5"></div>
         </div>

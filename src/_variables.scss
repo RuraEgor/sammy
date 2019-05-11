@@ -4,17 +4,9 @@ $tran-f: 620ms;
 $tran-slow: 320ms;
 
 // COLORS
-$default: #f7e832;
-$c-heading-darken: #323231;
-$c-heading-dark: #444444;
-$c-heading-gray: #6a6a6a;
-$c-heading-gray-light: #bababa;
-$c-error: #ff4444;
-$c-success: #5ddb9f;
-$c-info: #62e3f5;
-$c-bg: #fcfcfc;
-$c-text: $c-heading-gray;
-$c-cat-link: #05244b;
+$white: #ffffff;
+$default: #000000;
+$red: #f15217;
 
 // TYPOGRAPHY
 $flh-normal: 1.3;
@@ -45,6 +37,7 @@ $custom-file-text: (
 
 $ff: "Work Sans", sans-serif;
 $tehno: "Tehno", sans-serif;
+$tehno-h: "Tehno-header", sans-serif;
 
 $red-color: #ff6000;
 $darkblue-color: #08256c;

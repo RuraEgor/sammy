@@ -32,16 +32,18 @@ $(function () {
 
 
     $('.js-menu__item').on('click', function () {
+
         const $thisEl = $(this);
 
-        if ($thisEl.hasClass('act-link')) {
+        if ($thisEl.hasClass('menu_act')) {
             retAllPageElem();
             return false;
+        } else {
+            $('.menu__item').removeClass('menu_act');
+            $thisEl.addClass('menu_act');
+            const numSect = $thisEl.attr('data-sect');
+            $(`.bl-city__item.clip_${numSect}`).click();
         }
-
-        $thisEl.toggleClass('act-link');
-        const numSect = $thisEl.attr('data-sect');
-        $(`.bl-city__item.clip_${numSect}`).click();
     });
 
 });
@@ -143,19 +145,19 @@ setInterval( () => {
 
 
 //===========
-$('.scroll-main').slimscroll({
-    height: '100vh',
-    // alwaysVisible: true,
-    color: 'yellow',
-    size: '4px',
-    opacity: 0.8
-});
+// $('.scroll-main').slimscroll({
+//     height: 'auto',
+//     // alwaysVisible: true,
+//     color: 'yellow',
+//     size: '4px',
+//     opacity: 0.8
+// });
 
 
 $(function () {
-    setTimeout(moveSize, 2000);
-    setTimeout(moveWind, 3500);
-    setTimeout(chTrans, 6000);
+    setTimeout(moveSize, 1000);
+    setTimeout(moveWind, 2500);
+    setTimeout(chTrans, 4000);
 });
 
 
@@ -189,3 +191,23 @@ function retAllPageElem() {
     $('.bl-city__item').removeClass('zm act op_z zm_next');
     $('.menu__item').removeClass('menu_act');
 }
+
+
+//===== TWIN-MAX
+
+function anim(zn) {
+    return new Promise (
+        function (resolve, reject) {
+
+            const tl = new TimelineMax();
+
+            tl.add(TweenMax.from('.anim_text', 1, {opacity: 0, x: -100, delay: 4 }));
+            tl.add(TweenMax.staggerFrom('.anim_main-link', 1, {opacity: 0, x: -100, delay: -0.3 }, 0.3 ));
+            tl.add(TweenMax.staggerFrom('.anim_dop-link', 1, {opacity: 0, y: 100, delay: -0.3}, 0.3 ));
+            tl.add(TweenMax.staggerFrom('.block-social__item', 0.5, {opacity: 0, y: 100, delay: -0.3, onComplete: resolve, }, 0.1 ));
+        }
+    );
+}
+
+
+anim();
