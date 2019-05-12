@@ -66,30 +66,7 @@ $('.js-bl-slide__item').on('click', function () {
 
     stateElem.actPage = true;
 
-    // let clip = '20px';
-    // let hor3 = '80%';
-    // let vert3 = '50%';
-    //
-    //
-    // let clipFun = `polygon(calc(${hor3} - ${clip}) ${vert3},
-    //        calc(${hor3} - ${clip} / 2) calc(${vert3} - ${clip} / 2),
-    //        ${hor3} calc(${vert3} - ${clip}),
-    //        calc(${hor3} + ${clip} / 2) calc(${vert3} - ${clip} / 2),
-    //        calc(${hor3} + ${clip}) ${vert3},
-    //        calc(${hor3} + ${clip} / 2) calc(${vert3} + ${clip} / 2),
-    //        ${hor3} calc(${vert3} + ${clip}),
-    //        calc(${hor3} - ${clip} / 2) calc(${vert3} + ${clip} / 2))`;
-    //
-    //
-    // thisEl.css({'clip-path': clipFun});
-
-
-    // $('.bl-city__item').css('z-index', 10);
-    // $(this).css('z-index', 100);
-
-    // let con = $('.bl-city__item').addClass('pen');
     thisEl.addClass('zm');
-    // thisEl.removeClass('pen');
 
     if (thisEl.hasClass('act')) {
         thisEl.removeClass('act');
@@ -201,10 +178,10 @@ function anim(zn) {
 
             const tl = new TimelineMax();
 
-            tl.add(TweenMax.from('.anim_text', 1, {opacity: 0, x: -100, delay: 4 }));
-            tl.add(TweenMax.staggerFrom('.anim_main-link', 1, {opacity: 0, x: -100, delay: -0.3 }, 0.3 ));
-            tl.add(TweenMax.staggerFrom('.anim_dop-link', 1, {opacity: 0, y: 100, delay: -0.3}, 0.3 ));
-            tl.add(TweenMax.staggerFrom('.block-social__item', 0.5, {opacity: 0, y: 100, delay: -0.3, onComplete: resolve, }, 0.1 ));
+            tl.add(TweenMax.from('.anim_text', 1, {opacity: 0, x: -100, delay: 2 }));
+            tl.add(TweenMax.staggerFrom('.anim_main-link', 0.8, {opacity: 0, x: -100, delay: -0.3 }, 0.2 ));
+            tl.add(TweenMax.staggerFrom('.anim_dop-link', 0.8, {opacity: 0, y: 100, delay: -0.3}, 0.2 ));
+            tl.add(TweenMax.staggerFrom('.block-social__item', 0.5, {opacity: 0, y: 100, delay: -0.5, onComplete: resolve, }, 0.07 ));
         }
     );
 }

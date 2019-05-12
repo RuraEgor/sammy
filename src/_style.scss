@@ -292,11 +292,11 @@ $time-tr: 2s;
 
 //======================================
 
-$hor3: 50%;
-$vert3: 50%;
+//$hor3: 50%;
+//$vert3: 50%;
 $time-tr-st: 1s;
 
-.start {
+.start__777777 {
 
   .bl-city__item {
     transition: all $time-tr-st;
@@ -444,16 +444,6 @@ $time-tr-beg: 0.5s;
 
 //======================================
 
-.clip_2-cn {
-  transform: translate(11%, -14%);
-}
-
-.act {
-  .clip_2-cn {
-    transform: translate(0%, 0%);
-  }
-}
-
 .act {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(0% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0 100%) !important;
@@ -509,7 +499,7 @@ $time-tr-beg: 0.5s;
     right: 148px;
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 12px 13px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.6);
     opacity: 0;
     transition: opacity 1s;
     transition-delay: 1s;
@@ -518,7 +508,24 @@ $time-tr-beg: 0.5s;
     transform: translateY(-50%) rotate(45deg);
   }
 
-  &.act .bl-city__item-cn::before {
+  .bl-city__item-cn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 1s;
+    transition-delay: 1s;
+  }
+
+  &.act .bl-city__item-cn::before,
+  &.act .bl-city__item-cn::after {
     opacity: 1;
     transition: opacity 1s;
     transition-delay: 2s;
@@ -537,6 +544,54 @@ $time-tr-beg: 0.5s;
   bottom: 0;
   top: 0;
   transition: all $time-tr;
+}
+
+
+.act .bl-city__bg {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  transform: translateY(0%);
+}
+
+.zm_next .bl-city__bg {
+  transition: all 0.4s;
+}
+
+.bl-city__bg {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: all 2s;
+  transform: translateY(-50%);
+}
+
+.bl-city__bg_2 {
+  background-image: url('../img/bg/story.png');
+  transform: translate(0%, -81%);
+}
+
+.bl-city__bg_3 {
+  background-image: url('../img/bg/characters.png');
+  transform: translate(-5%, -53%);
+}
+
+.bl-city__bg_4 {
+  background-image: url('../img/bg/art.jpg');
+  background-position: right bottom;
+  transform: translate(-21%, 0%);
+}
+
+.bl-city__bg_5 {
+  background-image: url('../img/bg/world.png');
+  transform: translate(-19%, -65%);
 }
 
 .zm {
@@ -567,7 +622,8 @@ $time-tr-beg: 0.5s;
   z-index: 10;
   left: 70px;
   top: 80px;
-  right: 80px;
+  top: 45%;
+  transform: translateY(-50%);
   overflow: hidden;
   transition: opacity 0.4s;
   opacity: 0;
@@ -580,7 +636,8 @@ $time-tr-beg: 0.5s;
   opacity: 1;
   background: rgba(0, 0, 0, 0);
   box-shadow: 0 0 12px 13px rgba(0, 0, 0, 0);
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+  overflow: inherit;
 }
 
 
@@ -588,7 +645,7 @@ $time-tr-beg: 0.5s;
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  background-image: url('../img/main-page.png');
+  background-image: url('../img/bg/main-page.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -598,6 +655,7 @@ $time-tr-beg: 0.5s;
 .menu {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   min-width: 535px;
   position: absolute;
   z-index: 30;
@@ -609,14 +667,14 @@ $time-tr-beg: 0.5s;
   box-shadow: 0 0 12px 13px rgba(0, 0, 0, 0.5);
 
   &.menu_start {
-    right: 50%;
-    transform: translateX(50%);
+    //right: 50%;
+    //transform: translateX(50%);
   }
 }
 
 .menu__item {
   cursor: pointer;
-  font-size: 30px;
+  font-size: 23px;
   font-weight: normal;
   color: rgba(255, 215, 0, 0.8);
   font-family: $tehno;
@@ -661,6 +719,8 @@ $time-tr-beg: 0.5s;
 .menu__item_home {
   color: rgba(255, 215, 0, 1);
   text-transform: uppercase;
+  padding-right: 20px;
+  font-size: 26px;
 }
 
 
