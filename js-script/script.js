@@ -4,7 +4,8 @@
 
 let stateElem = {
     actPage: false,
-    actPageNum: false
+    actPageNum: false,
+    bgPosit: false
 }
 
 
@@ -33,11 +34,12 @@ $(function () {
 
     $('.js-menu__item').on('click', function () {
 
+        beginBgMoveClear();
+
         const $thisEl = $(this);
 
         if ($thisEl.hasClass('menu_act')) {
             retAllPageElem();
-            return false;
         } else {
             $('.menu__item').removeClass('menu_act');
             $thisEl.addClass('menu_act');
@@ -50,6 +52,8 @@ $(function () {
 
 
 $('.js-bl-slide__item').on('click', function () {
+
+    beginBgMoveClear();
 
     let thisEl = $(this);
 
@@ -135,6 +139,9 @@ $(function () {
     setTimeout(moveSize, 1000);
     setTimeout(moveWind, 2500);
     setTimeout(chTrans, 4000);
+    setTimeout(() => {
+        stateElem.bgPosit = setInterval(chBgPos, 10000);
+    }, 0);
 });
 
 
@@ -152,6 +159,69 @@ function chTrans() {
     $('.bl-decor__clip').removeClass('dn');
 }
 
+function beginBgMove() {
+    beginBgMoveClear();
+
+    stateElem.bgPosit = setInterval(chBgPos, 10000);
+}
+
+function beginBgMoveClear() {
+    clearInterval(stateElem.bgPosit);
+    stateElem.bgPosit = false;
+    $('.bl-city__bg').removeAttr('style');
+}
+
+function chBgPos() {
+
+    let masTiming = ['linear', 'ease', 'ease-in', 'ease-out'];
+    let masTrans = [3.5, 4, 4.5, 5];
+    let masTimingDelay = [0, 0.5, 0.7, 1];
+
+    masTiming.sort(compareRandom);
+    masTrans.sort(compareRandom);
+    masTimingDelay.sort(compareRandom);
+
+    const znX_2 = Math.random() * 50 - 30;
+    const znY_2 = Math.random() * 51 + 51;
+    $('.bl-city__bg_2').css({
+        'transform': `translate(${znX_2}%, -${znY_2}%)`,
+        'transition-timing-function': masTiming[0],
+        'transition': `all ${masTrans[0]}s`,
+        'transition-delay': `${masTimingDelay[0]}s`
+    });
+
+    const znX_3 = Math.random() * 65 - 13;
+    const znY_3 = Math.random() * 63 + 19;
+    $('.bl-city__bg_3').css({
+        'transform': `translate(${znX_3}%, -${znY_3}%)`,
+        'transition-timing-function': masTiming[1],
+        'transition': `all ${masTrans[1]}s`,
+        'transition-delay': `${masTimingDelay[1]}s`
+    });
+
+    const znX_4 = Math.random() * 52 - 32;
+    const znY_4 = Math.random() * 60;
+    $('.bl-city__bg_4').css({
+        'transform': `translate(${znX_4}%, -${znY_4}%)`,
+        'transition-timing-function': masTiming[2],
+        'transition': `all ${masTrans[2]}s`,
+        'transition-delay': `${masTimingDelay[2]}s`
+    });
+
+    const znX_5 = Math.random() * 60 - 50;
+    const znY_5 = Math.random() * 65 + 18;
+    $('.bl-city__bg_5').css({
+        'transform': `translate(${znX_5}%, -${znY_5}%)`,
+        'transition-timing-function': masTiming[3],
+        'transition': `all ${masTrans[3]}s`,
+        'transition-delay': `${masTimingDelay[3]}s`
+    });
+}
+
+function compareRandom(a, b) {
+    return Math.random() - 0.5;
+}
+
 
 function showOpacElem() {
     stateElem.actPageNum.removeClass('op_z zm_next')
@@ -167,6 +237,8 @@ function retAllPageElem() {
     stateElem.actPageNum = false;
     $('.bl-city__item').removeClass('zm act op_z zm_next');
     $('.menu__item').removeClass('menu_act');
+
+    beginBgMove();
 }
 
 
@@ -186,5 +258,7 @@ function anim(zn) {
     );
 }
 
+
+$('.cont-main_vis').show();
 
 anim();

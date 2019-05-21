@@ -551,7 +551,7 @@ $time-tr-beg: 0.5s;
   top: 0;
   width: 100%;
   height: 100%;
-  background-position: center center;
+  background-position: center center !important;
   transform: translateY(0%);
 }
 
@@ -574,12 +574,12 @@ $time-tr-beg: 0.5s;
 }
 
 .bl-city__bg_2 {
-  background-image: url('../img/bg/story.png');
+  background-image: url('../img/bg/story.jpeg');
   transform: translate(0%, -81%);
 }
 
 .bl-city__bg_3 {
-  background-image: url('../img/bg/characters.png');
+  background-image: url('../img/bg/characters.jpeg');
   transform: translate(-5%, -53%);
 }
 
@@ -590,7 +590,7 @@ $time-tr-beg: 0.5s;
 }
 
 .bl-city__bg_5 {
-  background-image: url('../img/bg/world.png');
+  background-image: url('../img/bg/world.jpeg');
   transform: translate(-19%, -65%);
 }
 
@@ -645,7 +645,7 @@ $time-tr-beg: 0.5s;
   min-height: 100vh;
   min-width: 100vw;
   position: relative;
-  background-image: url('../img/bg/main-page.png');
+  background-image: url('../img/bg/main-page.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -774,7 +774,7 @@ $time-tr-beg: 0.5s;
   background-position: center;
   background-size: cover;
   border: 1px solid gray;
-  transition: background-position 0.45s;
+  transition: background-position 0.8s;
   cursor: pointer;
   padding: 30px;
   text-decoration: none;
@@ -802,11 +802,11 @@ $time-tr-beg: 0.5s;
 }
 
 .cont-main__link-en {
-  background-image: url(../img/bg_sammy.png);
+  background-image: url(../img/bg_sammy.jpeg);
 }
 
 .cont-main__link-rus {
-  background-image: url(../img/bg_len.png);
+  background-image: url(../img/bg_len.jpeg);
   margin-bottom: 0;
 }
 

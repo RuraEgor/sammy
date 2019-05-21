@@ -1,9 +1,19 @@
 @font-face {
   font-family: Tehno;
-  src: url('/fonts/tehno-font.ttf');
+  src: url('../fonts/tehno-font.ttf');
 }
 
 @font-face {
   font-family: Tehno-header;
-  src: url('/fonts/techno-regular-header.ttf');
+  src: url('../fonts/techno-regular-header.ttf');
+}
+
+@font-face {
+  font-family: 'WeaponeerItalic';
+  src: url('../fonts/WeaponeerItalic.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/WeaponeerItalic.woff') format('woff'),
+  url('../fonts/WeaponeerItalic.ttf') format('truetype'),
+  url('../fonts/WeaponeerItalic.svg#WeaponeerItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
